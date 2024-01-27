@@ -1,0 +1,33 @@
+@use "../../_variables.scss" as v;
+
+.validated{
+    width: 740px!important;
+    height: auto;
+    text-align: center;
+
+    h1{
+        font-size: 1.5rem;
+        letter-spacing: 5px;
+        font-weight: 700;
+        margin-top: 2rem;
+        color: v.$veryDarkViolet;
+    }
+
+    p{
+        font-size: 15px;
+        color: v.$darkGrayishViolet;
+    }
+
+    button{
+        width: 100%;
+        margin-top: 0.5rem;
+        padding: 0.6rem 0;
+        font-family: inherit;
+        background-color: v.$veryDarkViolet;
+        border: none;
+
+        &:hover{
+            background: v.$linear-gradient;
+        }
+    }
+}

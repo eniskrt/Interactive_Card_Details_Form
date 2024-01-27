@@ -1,0 +1,67 @@
+@use "../../variables.scss" as v;
+
+.right-col{
+    box-sizing: border-box!important;
+
+    .form-label{
+        font-size: 11px;
+        font-weight: 700;
+        letter-spacing: 2px;
+        color: v.$veryDarkViolet;
+    }
+
+    .input{
+        color: v.$veryDarkViolet;
+        box-shadow: none!important;
+        font-weight: 600;
+
+        &:active{
+            box-shadow: none;
+            border-color: hsl(278, 94%, 30%)!important;
+        }
+
+        &:focus{
+            border-color: hsl(278, 94%, 30%)!important;
+        }
+
+        &:invalid{
+            border-color: v.$red;
+            background-image:none!important;
+            height:fit-content;
+        }
+
+        &::placeholder{
+            font-weight: 400;
+            color: v.$darkGrayishViolet;
+        }
+    }
+    .was-validated .form-control:invalid, .form-control.is-invalid{
+        background-image: none;
+    }
+
+    .mb-4{
+        position: relative;
+    }
+
+    .invalid-feedback{
+        font-size: 10px;
+        font-weight: 800;
+        color: v.$red;
+        position: absolute;
+        bottom: -18px;
+        left: 5px;
+    }
+
+    button{
+        width: 100%;
+        margin-top: 0.5rem;
+        padding: 0.6rem 0;
+        font-family: inherit;
+        background-color: v.$veryDarkViolet;
+        border: none;
+
+        &:hover{
+            background: v.$linear-gradient;
+        }
+    }
+}

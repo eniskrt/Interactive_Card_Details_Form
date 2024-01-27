@@ -1,24 +1,38 @@
-import logo from './logo.svg';
-import './App.css';
+import {  Container, Row } from "react-bootstrap";
+import LeftCol from "./components/LeftCol/LeftCol";
+import RightCol from "./components/RightCol/RightCol";
+import Validated from "./components/RightCol/Validated.jsx"
+import { useEffect, useState } from "react";
+
 
 function App() {
+
+  const [success, setSuccess] = useState(false)
+  const [data, setData] = useState({
+    cardHolderName:"Jane Appleseed",
+    cardNumber:"0000 0000 0000 0000",
+    expDateMM:"00",
+    expDateYY:"00",
+    cvc:"000"
+  })
+  
+  useEffect(() => {
+
+  }, [data])
+  
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Container>
+      <Row>
+        <LeftCol data={data}/>
+        {!success?(
+          <RightCol setSuccess={setSuccess} setData={setData}/>
+        ):(
+          <Validated setSuccess={setSuccess}/>
+        )}
+        
+      </Row>
+    </Container>
   );
 }
 
