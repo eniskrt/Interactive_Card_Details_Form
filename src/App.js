@@ -19,16 +19,15 @@ function App() {
   useEffect(() => {
 
   }, [data])
-  
 
   return (
     <Container>
       <Row>
-        <LeftCol data={data}/>
+        <LeftCol data={data} success={success}/>
         {!success?(
-          <RightCol setSuccess={setSuccess} setData={setData}/>
+          <RightCol setSuccess={setSuccess} setData={setData} success={success}/>
         ):(
-          <Validated setSuccess={setSuccess}/>
+          <Validated setSuccess={setSuccess} setData={setData}/>
         )}
         
       </Row>

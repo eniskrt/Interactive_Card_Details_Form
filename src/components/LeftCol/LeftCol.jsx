@@ -2,7 +2,7 @@ import React from 'react'
 import { Col, Image } from 'react-bootstrap'
 import "./left-col.scss"
 
-const LeftCol = ({data}) => {
+const LeftCol = ({data,success}) => {
   return (
     <Col className='left-col'>
         <div className='circle-big'></div>
@@ -20,7 +20,7 @@ const LeftCol = ({data}) => {
             <small>{data.cardHolderName}</small>
             <small>{data.expDateMM}/{data.expDateYY}</small>
         </div>
-        <span className="cvc">{data.cvc}</span>
+        <span className="cvc" style={success?{bottom:"-20px"}:{}}>{data.cvc}</span>
     </Col>
   )
 }

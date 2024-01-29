@@ -4,7 +4,7 @@ import { Button, Col, Form } from "react-bootstrap";
 import * as Yup from "yup";
 import "./right-col.scss"
 
-const RightCol = ({setSuccess, setData}) => {
+const RightCol = ({setSuccess, setData, success}) => {
 
   const initialValues ={
     cardHolderName:"",
@@ -48,7 +48,7 @@ const RightCol = ({setSuccess, setData}) => {
     onSubmit
   })
 
-  const formData ={
+  let formData ={
     cardHolderName:formik.values.cardHolderName,
     cardNumber:formik.values.cardNumber,
     expDateMM:formik.values.expDateMM,
